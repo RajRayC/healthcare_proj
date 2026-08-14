@@ -1,0 +1,29 @@
+healthcare_proj:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: EXTXVUH-GR67914
+      user: RRC1408
+      role: DBT_ROLE          # use DBT_ROLE for least-privilege; swap to ACCOUNTADMIN if needed
+      warehouse: HEALTHCARE_WH
+      database: HEALTHCARE_DB
+      schema: STAGING          # dbt's default schema; sub-schemas from dbt_project.yml override this
+      threads: 4
+      client_session_keep_alive: false
+
+      # ── Key Pair Auth ──────────────────────────────────────
+      private_key_path: /Users/rajarshiraychaudhuri/.ssh/snowflake_dbt_rsa_key.p8
+      # private_key_passphrase: ""   # uncomment and set if key is encrypted
+
+    prod:
+      type: snowflake
+      account: EXTXVUH-GR67914
+      user: RRC1408
+      role: DBT_ROLE
+      warehouse: HEALTHCARE_WH
+      database: HEALTHCARE_DB
+      schema: STAGING
+      threads: 8
+      client_session_keep_alive: false
+      private_key_path: /Users/rajarshiraychaudhuri/.ssh/snowflake_dbt_rsa_key.p8

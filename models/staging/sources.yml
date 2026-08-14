@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    database: HEALTHCARE_DB
+    schema: RAW
+    description: "Raw source data loaded into Snowflake"
+    tables:
+      - name: patients
+        description: "Raw patient records"
+      - name: encounters
+        description: "Raw encounter / visit records"
+      - name: claims
+        description: "Raw claims data"
