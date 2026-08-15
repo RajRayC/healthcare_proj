@@ -1,0 +1,27 @@
+execution:
+  config:
+    in_process:
+
+run_storage:
+  sqlite:
+    base_dir: .dagster
+
+event_log_storage:
+  sqlite:
+    base_dir: .dagster
+
+schedule_storage:
+  sqlite:
+    base_dir: .dagster
+
+storage:
+  sqlite:
+    base_dir: .dagster
+
+run_coordinator:
+  module: dagster.core.run_coordinator
+  class: QueuedRunCoordinator
+
+compute_logs:
+  module: dagster.core.storage.compute_log_manager
+  class: LocalComputeLogManager

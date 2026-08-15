@@ -1,5 +1,12 @@
-with source as (
-    select * from {{ source('raw', 'patients') }}
+
+  create or replace   view HEALTHCARE_DB.STAGING_staging.stg_patients
+  
+  
+  
+  
+  as (
+    with source as (
+    select * from HEALTHCARE_DB.RAW.patients
 )
 ,
 cleaned as (
@@ -28,3 +35,5 @@ cleaned as (
 )
 
 select * from cleaned
+  );
+

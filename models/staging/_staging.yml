@@ -1,0 +1,29 @@
+models:
+  - name : stg_patients
+    description : "Staging model for patients data"
+    columns:
+      - name : patient_id
+        description : "Unique identifier for each patient"
+        tests : 
+          - not_null
+          - unique
+      - name : full_name
+        description : "Full name of the patient"
+      - name : date_of_birth
+        description : "Date of birth of the patient"
+      - name : gender
+        description : "Gender of the patient"
+        tests : 
+          - accepted_values:
+              arguments:
+                values: ['M', 'F', 'O']
+      - name : race
+        description : "Race of the patient"
+      - name : state
+        description : "State where the patient resides"
+      - name : zipcode
+        description : "Zip code of the patient's residence"
+      - name : insurance_id
+        description : "Identifier for the patient's insurance"
+      - name : insurance_type
+        description : "Type of insurance the patient has"

@@ -1,5 +1,5 @@
 with source as (
-    select * from {{ source('raw', 'patients') }}
+    select * from HEALTHCARE_DB.RAW.patients
 )
 ,
 cleaned as (
