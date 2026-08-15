@@ -1,0 +1,26 @@
+healthcare_proj:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: YOUR_ACCOUNT_IDENTIFIER
+      user: YOUR_SNOWFLAKE_USER
+      role: DBT_ROLE
+      warehouse: YOUR_WAREHOUSE
+      database: YOUR_DATABASE
+      schema: STAGING
+      threads: 4
+      client_session_keep_alive: false
+      private_key_path: /Users/YOUR_USERNAME/.ssh/snowflake_dbt_rsa_key.p8
+
+    prod:
+      type: snowflake
+      account: YOUR_ACCOUNT_IDENTIFIER
+      user: YOUR_SNOWFLAKE_USER
+      role: DBT_ROLE
+      warehouse: YOUR_WAREHOUSE
+      database: YOUR_DATABASE
+      schema: STAGING
+      threads: 8
+      client_session_keep_alive: false
+      private_key_path: /Users/YOUR_USERNAME/.ssh/snowflake_dbt_rsa_key.p8
